@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Boton from './components/Boton';
+import Tarjeta from './components/Tarjeta';
 
-function App() {
+const App = () => {
+  const primerNombre = 'Ana Clara';
+  const apellido = 'Reale';
+
+  let nombreDeClase = ""
+  
+  if (primerNombre === "Maca") {
+    nombreDeClase = "fondoRojo"
+  }
+  else {
+    nombreDeClase = "fondoAzul"
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Esto es un fragmento de React, para cuando necesitamos retornar dos etiquetas html adyancentes */}
+      <div className={nombreDeClase}>
+        {/* Adentro de JSX puedo usar expresiones, siempre que las rodee con llaves */}
+        <p>Hola, {primerNombre + apellido}, bienvenida a React</p>
+
+        <Boton />
+        <Boton />
+        <Boton />
+        <Boton />
+        <Boton />
+      </div>
+      <div>
+        <Tarjeta />
+        <Tarjeta />
+        <Tarjeta />
+        <Tarjeta />
+        <Tarjeta />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
